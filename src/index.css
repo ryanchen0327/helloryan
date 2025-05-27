@@ -257,10 +257,15 @@ a {
     width: 120px;
     height: 120px;
   }
+  .profile-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
   .contact-info {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    font-size: 0.95rem;
   }
   .social-links {
     flex-direction: row;
@@ -279,6 +284,37 @@ a {
   }
   .section {
     padding: 1.25rem;
+  }
+  .section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  .project-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .project-period, .project-location {
+    font-size: 0.9rem;
+  }
+  .project-description {
+    font-size: 1rem;
+  }
+  .project-details li {
+    font-size: 0.95rem;
+  }
+  .publication-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .publication-authors, .publication-venue {
+    font-size: 0.9rem;
+  }
+  .activity-category-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .activity-items-inline {
+    font-size: 0.9rem;
   }
 }
 
@@ -307,7 +343,8 @@ a {
     margin-bottom: 0.5rem;
   }
   .profile-title {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
   }
   .social-links {
@@ -338,22 +375,26 @@ a {
     margin-bottom: 1rem;
   }
   .section-title {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
     margin-bottom: 0.75rem;
   }
   .project-item {
     margin-bottom: 1.25rem;
   }
   .project-title {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
+    font-weight: 600;
     line-height: 1.4;
   }
   .project-period, .project-location {
     font-size: 0.8rem;
+    color: #666;
   }
   .project-description {
     font-size: 0.9rem;
     line-height: 1.5;
+    color: #666;
   }
   .project-details li {
     font-size: 0.85rem;
@@ -367,18 +408,25 @@ a {
     padding: 0.2rem 0.4rem;
   }
   .publication-title {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
+    font-weight: 600;
     line-height: 1.4;
   }
-  .publication-authors, .publication-venue {
+  .publication-authors {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  .publication-venue {
     font-size: 0.85rem;
   }
   .activity-category-title {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    font-weight: 600;
     min-width: 70px;
   }
   .activity-items-inline {
     font-size: 0.8rem;
+    color: #666;
   }
   .theme-toggle {
     top: 12px;
@@ -401,6 +449,10 @@ a {
     width: 80px;
     height: 80px;
   }
+  .profile-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
   .social-links {
     gap: 0.4rem;
   }
@@ -409,7 +461,20 @@ a {
     font-size: 0.8rem;
   }
   .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .project-title {
     font-size: 1rem;
+    font-weight: 600;
+  }
+  .publication-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .activity-category-title {
+    font-size: 0.85rem;
+    font-weight: 600;
   }
   .theme-toggle {
     top: 8px;
