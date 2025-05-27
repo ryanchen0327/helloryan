@@ -1,47 +1,37 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
+import React from 'react'
+import './index.css'
+import Profile from './components/Profile'
 import About from './components/About'
-import Skills from './components/Skills'
 import Projects from './components/Projects'
-import Experience from './components/Experience'
-import Contact from './components/Contact'
-import Blog from './components/Blog'
-import Footer from './components/Footer'
+import BeyondAcademic from './components/BeyondAcademic'
+import Publications from './components/Publications'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    // Simulate loading time
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1500)
-  }, [])
-
-  if (isLoading) {
-    return (
-      <div className="loading-screen">
-        <div className="loader"></div>
-        <h2>Loading...</h2>
-      </div>
-    )
-  }
-
   return (
     <div className="app">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Blog />
-        <Contact />
-      </main>
-      <Footer />
+      <Profile />
+
+      <div className="right-column">
+        <section className="section">
+          <h2 className="section-title">About</h2>
+          <About />
+        </section>
+
+        <section className="section">
+          <h2 className="section-title">Projects</h2>
+          <Projects />
+        </section>
+
+        <section className="section">
+          <h2 className="section-title">Other thingss</h2>
+          <BeyondAcademic />
+        </section>
+
+        <section className="section">
+          <h2 className="section-title">Publications</h2>
+          <Publications />
+        </section>
+      </div>
     </div>
   )
 }

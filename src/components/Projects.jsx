@@ -1,111 +1,82 @@
-import { useState } from 'react'
+import React from 'react'
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState('all')
-
   const projects = [
     {
-      id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      category: 'web',
-      link: '#',
-      github: '#',
+      id: 2,
+      title: '🔬 I like the SciFy, dense captioning, Finetuning for Planning Language Generation and Multi-agent Playground',
+      description: 'That\'s a rank',
+      link: 'https://github.com/ryanchen0327',
+      tags: ['NLP', 'RAG'],
+      collaborators: ['Hi!']
     },
     {
-      id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, team features, and progress tracking.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['React', 'Firebase', 'Material-UI'],
-      category: 'web',
-      link: '#',
-      github: '#',
+      id: 1,
+      title: '🚀 CambioML - Python Developer Intern',
+      description: '⚡ Built a scalable search engine for datasets',
+      tags: ['Python', 'AWS CDK', 'LLM', 'Selenium', 'Data Engineering', 'danswer ai'],
+      // details: [
+      //   '🏗️ Architected and deployed metadata crawling system for 5,000+ datasets across AWS Data Exchange, Datarade, and Snowflake platforms',
+      //   '🤖 Integrated LLM-powered search engine using the Danswer framework, enabling natural language queries across diverse datasets',
+      //   '☁️ Automated infrastructure provisioning with AWS CDK, ensuring consistent deployment pipelines across staging and production environments'
+      // ],
+      // period: 'Dec. 2023 – Mar. 2024',
+      // location: 'San Jose, CA'
     },
     {
       id: 3,
-      title: 'AI Image Generator',
-      description: 'An AI-powered image generation tool that creates unique artwork based on text descriptions.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['Python', 'TensorFlow', 'Flask'],
-      category: 'ai',
-      link: '#',
-      github: '#',
+      title: '🎯 LLM Bias Mitigation',
+      description: 'Addressed bias in LLM outputs',
+      link: 'https://drive.google.com/file/d/1BgsNO6o-sQn9hGMty24igBxd7dQ8ZHOC/view?usp=sharing',
+      tags: ['NLP', 'LLM', 'Bias Mitigation', 'Tree of Thoughts', 'Beam Search'],
+      collaborators: ['Zining Liu', 'Lixin Li', 'Pu Tan']
     },
     {
       id: 4,
-      title: 'Mobile Fitness App',
-      description: 'A cross-platform mobile application for tracking workouts, nutrition, and fitness progress.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['React Native', 'Redux', 'Firebase'],
-      category: 'mobile',
-      link: '#',
-      github: '#',
-    },
+      title: '♿️ F1Tenth but not a racing',
+      description: 'Computer vision-assisted autonomous racing car implementation using ROS framework and ml.',
+      link: 'https://github.com/ryanchen0327',
+      tags: ['ML', 'ROS', 'Computer Vision', 'Autonomous Systems'],
+      collaborators: ['Xinghang Ma']
+    }
   ]
-
-  const filters = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'web', label: 'Web Development' },
-    { id: 'mobile', label: 'Mobile Apps' },
-    { id: 'ai', label: 'AI/ML' },
-  ]
-
-  const filteredProjects = activeFilter === 'all'
-    ? projects
-    : projects.filter(project => project.category === activeFilter)
 
   return (
-    <section id="projects" className="projects">
-      <div className="container">
-        <h2 className="section-title">
-          <span className="text-gradient">Featured Projects</span>
-        </h2>
-        
-        <div className="project-filters">
-          {filters.map(filter => (
-            <button
-              key={filter.id}
-              className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
-              onClick={() => setActiveFilter(filter.id)}
-            >
-              {filter.label}
-            </button>
-          ))}
+    <div>
+      {projects.map(project => (
+        <div key={project.id} className="project-item">
+          <h3 className="project-title">
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+              {project.title}
+            </a>
+          </h3>
+          {project.period && (
+            <p className="project-period">{project.period}</p>
+          )}
+          {project.location && (
+            <p className="project-location">{project.location}</p>
+          )}
+          <p className="project-description">{project.description}</p>
+          {project.details && (
+            <ul className="project-details">
+              {project.details.map((detail, index) => (
+                <li key={index}>{detail}</li>
+              ))}
+            </ul>
+          )}
+          <div className="project-tags">
+            {project.tags.map(tag => (
+              <span key={tag} className="project-tag">{tag}</span>
+            ))}
+          </div>
+          {project.collaborators && (
+            <p className="project-collaborators">
+              <strong>👥 Collaborators:</strong> {project.collaborators.join(', ')}
+            </p>
+          )}
         </div>
-
-        <div className="projects-grid">
-          {filteredProjects.map(project => (
-            <div key={project.id} className="project-card">
-              <div className="project-image">
-                <img src={project.image} alt={project.title} />
-                <div className="project-overlay">
-                  <div className="project-links">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                      <i className="fas fa-external-link-alt"></i>
-                    </a>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
-                      <i className="fab fa-github"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                <div className="project-tags">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="project-tag">{tag}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+      ))}
+    </div>
   )
 }
 
