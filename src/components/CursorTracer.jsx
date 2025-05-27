@@ -30,25 +30,36 @@ const getInitialDarkMode = () => {
   return true;
 };
 
-function isTouchDevice() {
+function isMobileOrTablet() {
   if (typeof window !== 'undefined') {
-    return (
+    // Check for touch capability AND screen size
+    const hasTouch = (
       'ontouchstart' in window ||
       navigator.maxTouchPoints > 0 ||
       navigator.msMaxTouchPoints > 0
     );
+    
+    // Check screen size (tablets and phones)
+    const isSmallScreen = window.innerWidth <= 900;
+    
+    // Check user agent for mobile/tablet indicators
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isMobileUA = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile|tablet/i.test(userAgent);
+    
+    // Return true if it's a touch device with small screen OR has mobile user agent
+    return (hasTouch && isSmallScreen) || isMobileUA;
   }
   return false;
 }
 
 const CursorTracer = () => {
-  const [isTouch, setIsTouch] = useState(isTouchDevice());
+  const [isMobile, setIsMobile] = useState(isMobileOrTablet());
   useEffect(() => {
-    const check = () => setIsTouch(isTouchDevice());
+    const check = () => setIsMobile(isMobileOrTablet());
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
   }, []);
-  if (isTouch) return null;
+  if (isMobile) return null;
 
   const starsRef = useRef([]);
   const [isDark, setIsDark] = useState(getInitialDarkMode);
