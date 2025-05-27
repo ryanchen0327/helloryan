@@ -1,27 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
-/* Base Styles */
+/* Theme variables */
 :root {
   --text-color: #333;
   --link-color: #0366d6;
   --border-color: #e1e4e8;
+  --background-color: #ffffff;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body.light-mode {
+  --text-color: #333;
+  --link-color: #0366d6;
+  --border-color: #e1e4e8;
+  --background-color: #ffffff;
+}
+
+body.dark-mode {
+  --text-color: #f3f3f3;
+  --link-color: #7dd3fc;
+  --border-color: #333a;
+  --background-color: #181825;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   line-height: 1.4;
   color: var(--text-color);
-  background-color: #ffffff;
+  background-color: var(--background-color);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0.5rem;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* App Layout */
@@ -36,6 +46,13 @@ body {
   position: sticky;
   top: 0.5rem;
   height: fit-content;
+  background: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: background 0.3s;
+}
+body.dark-mode .left-column {
+  background: rgba(24,24,37,0.92);
 }
 
 .profile-section {
@@ -95,6 +112,12 @@ body {
 
 .section {
   margin-bottom: 1.5rem;
+  background: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+body.dark-mode .section {
+  background: rgba(24,24,37,0.92);
 }
 
 .section:last-child {
@@ -190,12 +213,27 @@ body {
 }
 
 .project-tag {
-  background: #f1f8ff;
+  background: var(--background-color);
   color: var(--link-color);
   padding: 0.15rem 0.35rem;
   border-radius: 3px;
   font-size: 0.75rem;
-  border: 1px solid #c8e1ff;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+body.dark-mode .project-tag {
+  background: rgba(24,24,37,0.85);
+}
+
+/* Make stars visible in bright mode by adding a subtle outline */
+body.light-mode .star-effect {
+  outline: 1.5px solid #e1e4e8;
+  box-shadow: 0 0 8px 2px #fff, 0 0 20px 4px #ffd70055, 0 0 0 2px #e1e4e8;
+}
+
+body.dark-mode .star-effect {
+  outline: 1.5px solid #232336;
+  box-shadow: 0 0 8px 2px #fff, 0 0 20px 4px #fff7, 0 0 0 2px #232336;
 }
 
 .project-collaborators {
@@ -308,4 +346,15 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+a {
+  color: var(--link-color);
+  transition: color 0.3s;
+}
+
+body.dark-mode .section,
+body.dark-mode .left-column,
+body.dark-mode .project-tag {
+  background: #181825;
 }

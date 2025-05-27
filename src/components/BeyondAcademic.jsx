@@ -4,7 +4,7 @@ const BeyondAcademic = () => {
   const activities = [
     {
       category: 'Hobbies',
-      items: ['Travel', 'Play CSGO']
+      items: ['Travel', 'CS:GO(I will update some clips later)']
     },
     {
       category: 'Sports',
