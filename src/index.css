@@ -147,6 +147,10 @@ body {
   text-decoration: underline;
 }
 
+.project-title span {
+  color: var(--text-color);
+}
+
 .project-period, .project-location {
   font-size: 0.85rem;
   color: #666;
