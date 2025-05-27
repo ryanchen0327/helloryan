@@ -4,10 +4,10 @@ const Projects = () => {
   const projects = [
     {
       id: 2,
-      title: '🔬 I like the SciFy, dense captioning, Finetuning for Planning Language Generation and Multi-agent Playground',
-      description: 'That\'s a rank',
+      title: 'My project preferences',
+      description: 'T',
       // No link provided for this project
-      tags: ['NLP', 'RAG'],
+      tags: ['SciFy', 'Dense Captioning', 'Finetuning for Planning', 'Multi-agent Playground'],
       collaborators: ['Hi!']
     },
     {
