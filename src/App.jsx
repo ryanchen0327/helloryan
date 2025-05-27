@@ -8,48 +8,24 @@ import Publications from './components/Publications'
 import CursorTracer from './components/CursorTracer'
 
 function App() {
-  // On mount, force dark mode unless user has explicitly chosen light
-  useEffect(() => {
-    const userPref = localStorage.getItem('theme');
-    if (!userPref) {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode');
-    }
-  }, []);
-
   const [darkMode, setDarkMode] = useState(() => {
     const userPref = localStorage.getItem('theme');
     if (userPref === 'light') return false;
     if (userPref === 'dark') return true;
-    return true;
+    return true; // Default to dark mode
   });
 
   useEffect(() => {
-    document.body.classList.toggle('dark-mode', darkMode);
-    document.body.classList.toggle('light-mode', !darkMode);
-    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+    const theme = darkMode ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }, [darkMode]);
 
   return (
     <>
       <CursorTracer />
       <button
-        style={{
-          position: 'fixed',
-          top: 16,
-          right: 16,
-          zIndex: 10000,
-          padding: '8px 16px',
-          borderRadius: '20px',
-          border: 'none',
-          background: darkMode ? '#222' : '#fff',
-          color: darkMode ? '#fff' : '#222',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-          cursor: 'pointer',
-          fontWeight: 600,
-          fontSize: 16,
-          transition: 'background 0.2s, color 0.2s',
-        }}
+        className={darkMode ? 'theme-toggle dark' : 'theme-toggle light'}
         onClick={() => setDarkMode((d) => !d)}
         aria-label="Toggle dark mode"
       >

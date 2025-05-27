@@ -18,18 +18,38 @@ function randomBetween(a, b) {
 }
 
 const getInitialDarkMode = () => {
-  // Prefer dark mode by default, unless user has explicitly chosen light
   if (typeof window !== 'undefined') {
+    const theme = document.documentElement.getAttribute('data-theme');
+    if (theme) return theme === 'dark';
+    
     const userPref = localStorage.getItem('theme');
     if (userPref === 'light') return false;
     if (userPref === 'dark') return true;
-    // Otherwise, prefer dark
-    return true;
+    return true; // Default to dark
   }
   return true;
 };
 
+function isTouchDevice() {
+  if (typeof window !== 'undefined') {
+    return (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0
+    );
+  }
+  return false;
+}
+
 const CursorTracer = () => {
+  const [isTouch, setIsTouch] = useState(isTouchDevice());
+  useEffect(() => {
+    const check = () => setIsTouch(isTouchDevice());
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  if (isTouch) return null;
+
   const starsRef = useRef([]);
   const [isDark, setIsDark] = useState(getInitialDarkMode);
   const colorMap = useMemo(() =>
@@ -91,13 +111,13 @@ const CursorTracer = () => {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
-  // Listen for theme changes on the body
+  // Listen for theme changes on the document element
   useEffect(() => {
     const observer = new MutationObserver(() => {
-      const isBodyDark = document.body.classList.contains('dark-mode');
-      setIsDark(isBodyDark);
+      const theme = document.documentElement.getAttribute('data-theme');
+      setIsDark(theme === 'dark');
     });
-    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     return () => observer.disconnect();
   }, []);
 
