@@ -19,7 +19,7 @@ const Profile = () => {
         <a href="https://www.linkedin.com/in/sirui-chen-48760622b/" className="social-link">
           <i className="fab fa-linkedin"></i> LinkedIn Profile
         </a>
-        <a href={`${import.meta.env.BASE_URL}1.pdf`} className="social-link" target="_blank" rel="noopener noreferrer">
+        <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="social-link" target="_blank" rel="noopener noreferrer">
           <i className="fas fa-download"></i> Download Resume
         </a>
       </div>
