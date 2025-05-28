@@ -316,6 +316,33 @@ a {
   .activity-items-inline {
     font-size: 0.9rem;
   }
+  .project-tags {
+    display: flex;
+    gap: 0.3rem;
+    margin: 0.4rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.1rem 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex-wrap: nowrap;
+  }
+  .project-tags::-webkit-scrollbar {
+    display: none;
+  }
+  .project-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 14px;
+    background: var(--border-color);
+    color: var(--text-color);
+    border: none;
+    box-shadow: none;
+    opacity: 0.85;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-weight: 500;
+  }
 }
 
 /* Mobile Layout */
@@ -401,11 +428,32 @@ a {
     line-height: 1.4;
   }
   .project-tags {
-    gap: 0.4rem;
+    display: flex;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.1rem 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex-wrap: nowrap;
+  }
+  .project-tags::-webkit-scrollbar {
+    display: none;
   }
   .project-tag {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 12px;
+    background: var(--border-color);
+    color: var(--text-color);
+    border: none;
+    box-shadow: none;
+    opacity: 0.8;
+    white-space: nowrap;
+    line-height: 1.2;
+    flex-shrink: 0;
+    font-weight: 500;
   }
   .publication-title {
     font-size: 1.05rem;
@@ -475,6 +523,34 @@ a {
   .activity-category-title {
     font-size: 0.85rem;
     font-weight: 600;
+  }
+  .project-tags {
+    display: flex;
+    gap: 0.2rem;
+    margin: 0.3rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.05rem 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex-wrap: nowrap;
+  }
+  .project-tags::-webkit-scrollbar {
+    display: none;
+  }
+  .project-tag {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.35rem;
+    border-radius: 10px;
+    background: var(--border-color);
+    color: var(--text-color);
+    border: none;
+    box-shadow: none;
+    opacity: 0.75;
+    white-space: nowrap;
+    line-height: 1.1;
+    flex-shrink: 0;
+    font-weight: 500;
   }
   .theme-toggle {
     top: 8px;
