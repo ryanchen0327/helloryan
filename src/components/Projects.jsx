@@ -5,7 +5,7 @@ const Projects = () => {
     {
       id: 2,
       title: 'My project preferences',
-      description: 'T',
+      description: '',
       // No link provided for this project
       tags: ['SciFy', 'Dense Captioning', 'Finetuning for Planning', 'Multi-agent Playground'],
       collaborators: ['Hi!']

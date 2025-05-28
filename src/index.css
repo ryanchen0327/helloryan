@@ -86,6 +86,7 @@ body {
   font-size: 1rem;
   color: #666;
   margin-bottom: 0.75rem;
+  font-weight: 500;
 }
 .social-links {
   display: flex;
@@ -101,7 +102,8 @@ body {
   align-items: center;
   gap: 0.5rem;
   border-radius: 6px;
-  padding: 0.2rem 0.5rem;
+  padding: 0.4rem 0.6rem;
+  min-height: 40px;
 }
 .social-link:hover {
   color: var(--link-color);
@@ -110,9 +112,18 @@ body {
 .contact-info {
   font-size: 0.95rem;
   line-height: 1.6;
+  text-align: center;
+  color: #666;
+  font-weight: 500;
 }
 .project-item {
   margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.project-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
 }
 .project-title {
   font-size: 1rem;
@@ -152,6 +163,17 @@ body {
   position: absolute;
   left: 0;
   color: var(--link-color);
+}
+.project-collaborators {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
 }
 .project-tags {
   display: flex;
@@ -316,6 +338,15 @@ a {
   .activity-items-inline {
     font-size: 0.9rem;
   }
+  .project-collaborators {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.7rem;
+  }
   .project-tags {
     display: flex;
     gap: 0.3rem;
@@ -476,6 +507,15 @@ a {
     font-size: 0.8rem;
     color: #666;
   }
+  .project-collaborators {
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+  }
+  .about-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+  }
   .theme-toggle {
     top: 12px;
     right: 12px;
@@ -523,6 +563,15 @@ a {
   .activity-category-title {
     font-size: 0.85rem;
     font-weight: 600;
+  }
+  .project-collaborators {
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+  }
+  .about-text p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
   }
   .project-tags {
     display: flex;
