@@ -5,7 +5,7 @@ const About = () => {
     <div className="about-content">
       <div className="about-text">
         <p>
-          🎓 I am a graduate CIS student at UPenn.
+          🎓 I am a CIS student at UPenn.
         </p>
         <p>
           🔬 My research interests are NLP, and LLM-based applications.
