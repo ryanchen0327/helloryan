@@ -5,7 +5,7 @@ const Profile = () => {
     <div className="left-column">
       <div className="profile-section">
         <img src="/profile.jpg" alt="Ryan Chen" className="profile-image" />
-        {/* <h1 className="profile-name">Ryan Chen</h1> */}
+        <h1 className="profile-name">Ryan Chen</h1>
         <p className="profile-title">🏛️ UPenn CIS</p>
       </div>
       

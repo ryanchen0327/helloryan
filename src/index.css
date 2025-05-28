@@ -82,6 +82,13 @@ body {
   margin-bottom: 0.75rem;
   object-fit: cover;
 }
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color);
+  display: none; /* Hidden on desktop by default */
+}
 .profile-title {
   font-size: 1rem;
   color: #666;
@@ -279,22 +286,26 @@ a {
     position: static;
     padding: 1.25rem;
     margin-bottom: 0;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
-    align-items: start;
+    display: block; /* Change from grid to block since no image */
   }
   .profile-section {
-    text-align: left;
-    margin-bottom: 0;
+    text-align: center;
+    margin-bottom: 1rem;
   }
   .profile-image {
-    width: 120px;
-    height: 120px;
+    display: none; /* Hide image on tablet */
+  }
+  .profile-name {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.3rem;
   }
   .profile-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
+    text-align: center;
   }
   .contact-info {
     display: flex;
@@ -432,14 +443,20 @@ a {
     margin-bottom: 1rem;
   }
   .profile-image {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 0.5rem;
+    display: none; /* Hide image on mobile */
+  }
+  .profile-name {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.3rem;
   }
   .profile-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    text-align: center;
   }
   .social-links {
     flex-direction: row;
@@ -576,12 +593,19 @@ a {
     padding: 0.75rem;
   }
   .profile-image {
-    width: 80px;
-    height: 80px;
+    display: none; /* Hide image on extra small */
+  }
+  .profile-name {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.25rem;
   }
   .profile-title {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
+    text-align: center;
   }
   .social-links {
     gap: 0.3rem;
